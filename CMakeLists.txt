@@ -8,7 +8,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG")
 include_directories(headers)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/output)
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/output)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/output_linux_shared)
 
 
 ################################
@@ -22,10 +22,12 @@ option(BUILD_SHARED_LIBS "build shared libs" ON)
 option(BUILD_STATIC_LIBS "build static libs" ON)
 
 if(BUILD_SHARED_LIBS)
+    message(build shared libs)
     add_library(tinyxml2 SHARED src/tinyxml2.cpp)
 endif(BUILD_SHARED_LIBS)
 
-if(BUILD_STATIC_LIBS)
-    add_library(tinyxml2_static STATIC src/tinyxml2.cpp)
-    SET_TARGET_PROPERTIES(tinyxml2_static PROPERTIES OUTPUT_NAME "tinyxml2")
-endif(BUILD_STATIC_LIBS)
+#if(BUILD_STATIC_LIBS)
+#    message(build static libs)
+#    add_library(tinyxml2 STATIC src/tinyxml2.cpp)
+##    SET_TARGET_PROPERTIES(tinyxml2_static PROPERTIES OUTPUT_NAME "tinyxml2")
+#endif(BUILD_STATIC_LIBS)
