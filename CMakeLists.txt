@@ -18,8 +18,8 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/output)
 # User can choose not to build shared library by using cmake -DBUILD_SHARED_LIBS:BOOL=OFF
 # To build only static libs use cmake . -DBUILD_SHARED_LIBS:BOOL=OFF -DBUILD_STATIC_LIBS:BOOL=ON
 
-option(BUILD_SHARED_LIBS "build shared libs" OFF)
-option(BUILD_STATIC_LIBS "build static libs" ON)
+option(BUILD_SHARED_LIBS "build shared libs" ON)
+option(BUILD_STATIC_LIBS "build static libs" OFF)
 
 if(BUILD_SHARED_LIBS)
     message(build shared libs)
